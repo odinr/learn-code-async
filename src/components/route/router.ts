@@ -19,6 +19,9 @@ export class RouterElement extends LitElement {
     @property({ type: Array, attribute: false })
     public routes: Array<Route> = [];
 
+    @property()
+    basePath: string = '/learn-code-async'
+
     get route() {
         const path = window.location.pathname;
         return util(this.routes).current;
@@ -55,7 +58,7 @@ export class RouterElement extends LitElement {
     }
 
     go(route: Route) {
-        history.pushState({}, "", route.path);
+        history.pushState({}, "", this.basePath + route.path);
         return this.requestUpdate();
     }
 
