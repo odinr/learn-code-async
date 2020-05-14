@@ -23,7 +23,7 @@ class CodePageAsyncDish extends PageElement {
         // const highlight = Array((this.getHighlight() || []) as [number, number]);
         return html`
             <mdc-grid-cell span="12">
-            <cwc-code-highlight src="/examples/dish-async.ts" .highlight="${this.getHighlight()}"></cwc-code-highlight>
+            <cwc-code-highlight src="./examples/dish-async.ts" .highlight="${this.getHighlight()}"></cwc-code-highlight>
             <cwc-code-runner .execute="${this.runCode.bind(this)}"></cwc-code-runner>
             </mdc-grid-cell>
         `;

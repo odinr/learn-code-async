@@ -24,7 +24,7 @@ class CodePageCallback1 extends PageElement {
             <mdc-grid-cell span="12">
             <cwc-learn-code-container 
                 runtime="1000"
-                src="/examples/callback_1.ts" 
+                src="./examples/callback_1.ts" 
                 .code=${import('../../examples/callback_1')}
                 .highlight=${this.getHighlight()}
             >

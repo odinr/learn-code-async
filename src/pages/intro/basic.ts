@@ -25,7 +25,7 @@ class CodePageBasic extends PageElement {
         return html`
             <mdc-grid-cell span="12">
             <cwc-learn-code-container 
-                src="/examples/basic.ts" 
+                src="./examples/basic.ts" 
                 .code=${import('../../examples/basic')}
                 .highlight=${this.getHighlight()}
             >

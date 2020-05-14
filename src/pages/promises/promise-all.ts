@@ -16,7 +16,7 @@ class CodePagePromiseAll extends PageElement {
         // const highlight = Array((this.getHighlight() || []) as [number, number]);
         return html`
             <mdc-grid-cell span="12">
-            <cwc-code-highlight src="/examples/promise-all.ts"></cwc-code-highlight>
+            <cwc-code-highlight src="./examples/promise-all.ts"></cwc-code-highlight>
             <cwc-code-runner .execute="${this.runCode.bind(this)}"></cwc-code-runner>
             </mdc-grid-cell>
         `;
