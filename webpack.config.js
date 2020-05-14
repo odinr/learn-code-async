@@ -1,5 +1,7 @@
 const path = require("path");
 const del = require("del");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -68,8 +70,17 @@ module.exports = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      hash: true,
+      base: "https://odinr.github.io/learn-code-async/",
+      template: 'src/index.html'
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'async',
+      module: ['main'],
+    }),
     new CopyPlugin([
-      { context: srcDir, from: "*.html" },
+      { context: srcDir, from: "404.html" },
       {
         context: srcDir,
         from: "examples",
