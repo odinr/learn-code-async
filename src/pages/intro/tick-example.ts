@@ -27,7 +27,7 @@ class CodePageTickExample extends PageElement {
         }
         return html`
             <mdc-grid-cell span="12">
-                <cwc-code-highlight theme="light" src="/examples/tick.ts" .highlight="${highlight}"></cwc-code-highlight>
+                <cwc-code-highlight theme="light" src="./examples/tick.ts" .highlight="${highlight}"></cwc-code-highlight>
                 <p>A common mistake is trying to access the state before nextTick</p>
                 <cwc-code-runner .execute="${runCode}"></cwc-code-runner>
             </mdc-grid-cell>
