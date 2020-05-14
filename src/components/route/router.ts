@@ -58,7 +58,7 @@ export class RouterElement extends LitElement {
     }
 
     go(route: Route) {
-        history.pushState({}, "", "./" + route.path);
+        history.pushState({}, "", "." + route.path);
         return this.requestUpdate();
     }
 
