@@ -10,7 +10,7 @@ del.sync(outDir);
 module.exports = {
   entry: "./src/index.ts",
   output: {
-    publicPath: "/",
+    publicPath: "/learn-code-async",
     filename: "main.js",
     path: outDir,
   },
