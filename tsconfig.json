@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "./doc/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "ES6",
+        "moduleResolution": "Node",
+        "experimentalDecorators": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

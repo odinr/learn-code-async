@@ -1,0 +1,44 @@
+@use "sass:list";
+@use "sass:map";
+@use "./variables";
+@use "./mixins";
+
+$mdc-layout-grid-max-width: 1020px;
+$max-width: 1020px;
+// @import "@material/layout-grid/mdc-layout-grid";
+
+:host {
+  @each $size in map.keys(variables.$columns) {
+    --mdc-layout-grid-margin-#{$size}: #{map.get(
+        variables.$default-margin,
+        $size
+      )};
+    --mdc-layout-grid-gutter-#{$size}: #{map.get(
+        variables.$default-gutter,
+        $size
+      )};
+    --mdc-layout-grid-column-width-#{$size}: #{map.get(
+        variables.$column-width,
+        $size
+      )};
+  }
+}
+:host([align="left"]) .grid {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+:host([align="right"]) .grid {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.grid {
+  max-width: var(--max-width, max-content);
+  @each $size in map.keys(variables.$columns) {
+    @include mixins.media-query_($size) {
+      $margin: map.get(variables.$default-margin, $size);
+      @include mixins.layout-grid($size, $margin, variables.$max-width);
+    }
+  }
+}

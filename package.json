@@ -1,0 +1,40 @@
+{
+  "name": "@learn-codin/async",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@codin/cwc-code-highlight": "^0.1.6",
+    "@material/mwc-icon": "^0.15.0",
+    "@material/mwc-list": "^0.15.0",
+    "Prism": "^2.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.3",
+    "extract-loader": "^5.0.1",
+    "file-loader": "^6.0.0",
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1",
+    "lit-scss-loader": "^1.0.0",
+    "rxjs": "^6.5.5",
+    "sass-loader": "^8.0.2",
+    "save-dev": "0.0.1-security",
+    "ts-loader": "^7.0.2",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3",
+    "url-pattern": "^1.0.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@material/layout-grid": "^6.0.0",
+    "@material/mwc-button": "^0.15.0",
+    "sass": "^1.26.5"
+  }
+}
