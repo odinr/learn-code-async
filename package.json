@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server",
+    "prebuild": "rm -rf docs",
     "build": "webpack"
   },
   "keywords": [],

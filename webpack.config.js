@@ -12,6 +12,7 @@ module.exports = {
   output: {
     publicPath: "/learn-code-async/",
     filename: "main.js",
+    chunkFilename: '[id]-[hash].js',
     path: outDir,
   },
   mode: "development",
