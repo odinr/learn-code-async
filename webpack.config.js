@@ -4,16 +4,14 @@ const del = require("del");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const srcDir = path.resolve(__dirname, "src");
-const outDir = path.resolve(__dirname, "doc");
+const outDir = path.resolve(__dirname, "docs");
 del.sync(outDir);
 
 module.exports = {
   entry: "./src/index.ts",
   output: {
     publicPath: "./learn-code-async/",
-    filename: '[hash].js',
-    chunkFilename: '[chunkhash].js',
-    // filename: "main.js",
+    filename: "main.js",
     path: outDir,
   },
   mode: "development",
