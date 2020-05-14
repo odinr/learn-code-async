@@ -40,7 +40,7 @@ const routes: Route[] = [
                         <h1>404</h1>
                         <img src="${image404}"/>
                     </div>
-                    ${repeat(index, r => r.path, r => html`<br/><a @click=${onClick} href="${r.path}">${r.path}</a>`)}
+                    ${repeat(index, r => r.path, r => html`<br/><a @click=${onClick} href="./${r.path}">${r.path}</a>`)}
                 </cwc-learn-page>
             `;
         }
