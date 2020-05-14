@@ -11,7 +11,9 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     publicPath: "./learn-code-async/",
-    filename: "main.js",
+    filename: '[hash].js',
+    chunkFilename: '[chunkhash].js',
+    // filename: "main.js",
     path: outDir,
   },
   mode: "development",
