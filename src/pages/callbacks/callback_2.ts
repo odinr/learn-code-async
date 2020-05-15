@@ -1,4 +1,4 @@
-import { PageElement, CodeContainer } from '../../components';
+import { PageElement } from '../../components';
 import { customElement, query, html } from 'lit-element';
 import CodeRunner from '../../components/code-runner/code-runner';
 
@@ -22,8 +22,8 @@ class CodePageCallback2 extends PageElement {
         // const highlight = Array((this.getHighlight() || []) as [number, number]);
         return html`
             <mdc-grid-cell span="12">
-            <cwc-code-highlight src="./examples/dish-callback-2.ts" .highlight="${this.getHighlight()}"></cwc-code-highlight>
-            <cwc-code-runner .execute="${this.runCode.bind(this)}"></cwc-code-runner>
+                <cwc-code-highlight src="./examples/dish-callback-2.ts" .highlight="${this.getHighlight()}"></cwc-code-highlight>
+                <cwc-code-runner .execute="${this.runCode.bind(this)}"></cwc-code-runner>
             </mdc-grid-cell>
         `;
     }
@@ -36,6 +36,6 @@ class CodePageCallback2 extends PageElement {
     }
 }
 
-export const render = html`<cwc-learn-page-code-callback-2 header="TICK" steps="3"></cwc-learn-page-code-callback-2>`;
+export const render = html`<cwc-learn-page-code-callback-2 header="Callback" steps="3"></cwc-learn-page-code-callback-2>`;
 
 export default render;

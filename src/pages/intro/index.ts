@@ -15,11 +15,11 @@ export const routes: Route[] = [
     },
     {
         path: `/${basePath}/tick-example`,
-        render: async () => (await import('./tick-example')).render
+        render: async () => (await import('./tick/tick-example')).render
     },
     {
-        path: `/${basePath}/basic`,
-        render: async () => (await import('./basic')).render
+        path: `/${basePath}/topic`,
+        render: async () => (await import('./topic')).render
     },
 ];
 

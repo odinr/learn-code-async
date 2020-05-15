@@ -1,4 +1,4 @@
-import { PageElement, CodeContainer } from '../../components';
+import { PageElement } from '../../components';
 import { customElement, query, html } from 'lit-element';
 import CodeRunner from '../../components/code-runner/code-runner';
 
@@ -41,6 +41,6 @@ class CodePageAsyncDish extends PageElement {
     }
 }
 
-export const render = html`<cwc-learn-page-code-async-dish header="Async / Await dish" steps="4"></cwc-learn-page-code-async-dish>`;
+export const render = html`<cwc-learn-page-code-async-dish header="Async / Await dish" steps="3"></cwc-learn-page-code-async-dish>`;
 
 export default render;

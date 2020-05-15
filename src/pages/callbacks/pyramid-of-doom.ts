@@ -4,16 +4,11 @@ import image from './hell.png';
 
 export const render = html`
     <cwc-learn-page>
-        <header slot="header">
+        <div slot="header">
             <h1>Callback hell - Pyramid of Doom</h1>
+            <h2>Now imagine adding exception handlers for each function...</h2>
             <img slot="" src="${image}" />
-        </header>
-        <mdc-grid-inner>
-            <mdc-grid-cell align="middle">
-                <p>Now imagine adding exception handlers for each function...</p>
-                <p>Callbacks are hard to <strong>read, maintain, handle, debug, refactor</strong></p>
-            </mdc-grid-cell>
-        </mdc-grid-inner>
+        </div>
     </cwc-learn-page>
 `;
 

@@ -13,7 +13,7 @@ export class MdcGrid extends LitElement {
     public align?: 'left' | 'right';
 
     render() {
-        return html`<div class="grid"><mdc-grid-inner><slot></slot></mdc-grid-inner></div>`;
+        return html`<mdc-grid-inner><slot></slot></mdc-grid-inner>`;
     }
 }
 

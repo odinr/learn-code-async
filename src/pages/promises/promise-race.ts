@@ -1,4 +1,4 @@
-import { PageElement, CodeContainer } from '../../components';
+import { PageElement } from '../../components';
 import { customElement, query, html } from 'lit-element';
 import CodeRunner from '../../components/code-runner/code-runner';
 
@@ -29,6 +29,15 @@ class CodePagePromiseRace extends PageElement {
     }
 }
 
-export const render = html`<cwc-learn-page-code-promise-race header="Promise.race()" steps="2"></cwc-learn-page-code-promise-race>`;
+export const render = html`
+    <cwc-learn-page-code-promise-race header="Promise.race()" steps="2">
+        <div slot="lead">
+            <p>
+                The <code>Promise.race()</code> method returns a promise that <em>fulfills or rejects</em> 
+                as soon as <em>one</em> of the promises in an iterable <em>fulfills or rejects</em>, 
+                with the value or reason from that promise.
+            </p>
+        </div>
+    </cwc-learn-page-code-promise-race>`;
 
 export default render;

@@ -10,6 +10,8 @@ import intro from './pages/intro';
 import callbacks from './pages/callbacks';
 import promises from './pages/promises';
 import async from './pages/async-await';
+import generators from './pages/generators';
+import streams from './pages/streams';
 
 import image404 from './404.png';
 
@@ -23,6 +25,12 @@ const routes: Route[] = [
     ...callbacks,
     ...promises,
     ...async,
+    ...generators,
+    ...streams,
+    {
+        path: '/end',
+        render: async () => (await import('./pages/outro')).render
+    },
     {
         pattern: /.*/,
         path: "/404",

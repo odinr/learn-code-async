@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
-import { PageElement } from '../../components';
+import { PageElement } from '../../../components';
 import { customElement, query } from 'lit-element';
-import CodeRunner from '../../components/code-runner/code-runner';
+import CodeRunner from '../../../components/code-runner/code-runner';
 
 const highlights = [
     [[18,18]],
@@ -20,7 +20,7 @@ class CodePageTickExample extends PageElement {
             requestAnimationFrame(() => this.CodeRunner.run())
         }
         const runCode = async () => {
-            const { Component } = await import('../../examples/tick');
+            const { Component } = await import('../../../examples/tick');
             (new Component).render();
             await new Promise(r => setTimeout(r, 100));
             return "👍🏻 Render complete";

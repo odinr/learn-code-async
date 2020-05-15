@@ -1,7 +1,7 @@
-import { html, css, customElement } from 'lit-element';
+import { html, customElement, query } from 'lit-element';
 
 import image from './the_tick.jpg';
-import { PageElement } from '../../components';
+import { PageElement } from '../../../components';
 import { repeat } from 'lit-html/directives/repeat';
 
 import style from './tick.scss';
@@ -38,6 +38,9 @@ class CodePageTick extends PageElement {
     static styles = PageElement.styles.concat(style);
 
 
+    @query('li.active')
+    activeStep?: HTMLElement;
+
     renderMain() {
         return html`
             <mdc-grid-cell>
@@ -49,7 +52,8 @@ class CodePageTick extends PageElement {
     }
 
     renderItem(item: any, index: number) {
-        const className = index +2 === this.step ? "active" : "";
+        const className = index + 2 === this.step ? "active" : "";
+        requestAnimationFrame(() => this.activeStep?.scrollIntoView())
         return html`
             <li class="${className}">
                 <span class="title">${item.title}</span>
@@ -61,7 +65,7 @@ class CodePageTick extends PageElement {
 
 export const render = html`
     <cwc-learn-page-code-tick header="Tick" steps="${gg.length + 1}">
-        <img slot="header" src="${image}" height="150px"/>
+        <img slot="header" src="${image}"/>
     </cwc-learn-page-code-tick>
 `;
 

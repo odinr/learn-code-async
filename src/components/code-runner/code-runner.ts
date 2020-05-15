@@ -47,7 +47,7 @@ class CodeRunner extends LitElement {
     static styles = [style];
 
     @property({ type: Function, attribute: false })
-    execute: () => Promise<string | void>;
+    execute: () => Promise<TemplateResult | string | void>;
 
     @property({ type: Function, attribute: false })
     processMessage: ProcessMessage = processMessage;
@@ -59,7 +59,7 @@ class CodeRunner extends LitElement {
     messages: LogMessage[] = [];
 
     @property({ type: Array, attribute: false })
-    result?: Promise<string | void>;
+    result?: Promise<TemplateResult | string | void>;
 
     @property({ type: Array, attribute: false })
     log: LogType[] = ['log', 'warn', 'error'];
@@ -69,7 +69,7 @@ class CodeRunner extends LitElement {
 
     @query('.result')
     Result?: HTMLElement;
-   
+
     @query('#messages')
     List!: HTMLElement;
 
@@ -144,7 +144,7 @@ class CodeRunner extends LitElement {
             result: true,
             error: (this.result as any) instanceof Error
         });
-        
+
         return html`<div class="${classes}"><div>${result}</div></div>`;
     }
 

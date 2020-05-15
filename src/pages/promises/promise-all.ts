@@ -1,4 +1,4 @@
-import { PageElement, CodeContainer } from '../../components';
+import { PageElement } from '../../components';
 import { customElement, query, html } from 'lit-element';
 import CodeRunner from '../../components/code-runner/code-runner';
 
@@ -28,6 +28,15 @@ class CodePagePromiseAll extends PageElement {
     }
 }
 
-export const render = html`<cwc-learn-page-code-promise-all header="Promise.all()" steps="2"></cwc-learn-page-code-promise-all>`;
+export const render = html`
+<cwc-learn-page-code-promise-all header="Promise.all()" steps="2">
+    <div slot="lead">
+        <p>
+            The <code>Promise.all()</code> method returns a single Promise that resolves when all of the 
+            promises passed as an iterable have resolved or when the iterable contains no promises. 
+            It rejects with the reason of the first promise that rejects.
+        </p>
+    </div>
+</cwc-learn-page-code-promise-all>`;
 
 export default render;

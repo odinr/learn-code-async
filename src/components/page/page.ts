@@ -81,6 +81,7 @@ export class PageElement extends LitElement {
         return html`
             <mdc-grid>
                 ${this.renderHeader()}
+                ${this.renderLead()}
                 ${this.renderMain()}
             </mdc-grid>
         `;
@@ -95,6 +96,14 @@ export class PageElement extends LitElement {
                         <h1>${header}</h1>
                     </slot>
                 </header>
+            </mdc-grid-cell>
+        `;
+    }
+
+    renderLead() {
+        return html`
+            <mdc-grid-cell class="lead">
+                <slot name="lead"></slot>
             </mdc-grid-cell>
         `;
     }

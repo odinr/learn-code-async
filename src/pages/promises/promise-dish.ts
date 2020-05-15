@@ -1,4 +1,4 @@
-import { PageElement, CodeContainer } from '../../components';
+import { PageElement } from '../../components';
 import { customElement, query, html } from 'lit-element';
 import CodeRunner from '../../components/code-runner/code-runner';
 

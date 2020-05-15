@@ -1,20 +1,12 @@
-import { PageElement, CodeContainer } from '../../components';
+import { PageElement } from '../../components';
 import { customElement, query, html } from 'lit-element';
 import CodeRunner from '../../components/code-runner/code-runner';
 
-@customElement('cwc-learn-page-code-async-dish-refactor')
-class CodePageAsyncDish extends PageElement {
+@customElement('cwc-learn-page-code-stream')
+class CodePageStreamDish extends PageElement {
 
     @query('cwc-code-runner')
     CodeRunner: CodeRunner;
-
-    getHighlight(): Array<[number, number]> {
-        switch (this.step) {
-            case 1: return Array([3,3], [5,9])
-            case 2: return Array([11,19], [21, 27])
-            case 3: return Array([35,55])
-        }
-    }
 
     renderMain() {
         if (this.step === this.steps) {
@@ -23,16 +15,16 @@ class CodePageAsyncDish extends PageElement {
         // const highlight = Array((this.getHighlight() || []) as [number, number]);
         return html`
             <mdc-grid-cell span="12">
-            <cwc-code-highlight src="./examples/dish-async-refactor.ts" .highlight="${this.getHighlight()}"></cwc-code-highlight>
+            <cwc-code-highlight src="./examples/stream.ts"></cwc-code-highlight>
             <cwc-code-runner .execute="${this.runCode.bind(this)}"></cwc-code-runner>
             </mdc-grid-cell>
         `;
     }
 
     protected async runCode() {
-        const code = await import('../../examples/dish-async-refactor');
+        const code = await import('../../examples/stream');
         try{
-            const result = await code.default();
+            const result = await (await code.default()).toPromise();
             const content = result.ingredients.map(i => html`<span>${i} </span>`);
             return html`<h2>${result.name}</h2>${content}`;
         } catch(error){
@@ -41,6 +33,6 @@ class CodePageAsyncDish extends PageElement {
     }
 }
 
-export const render = html`<cwc-learn-page-code-async-dish-refactor header="Async / Await dish" steps="4"></cwc-learn-page-code-async-dish-refactor>`;
+export const render = html`<cwc-learn-page-code-stream header="Streams" steps="2"></cwc-learn-page-code-stream>`;
 
 export default render;
