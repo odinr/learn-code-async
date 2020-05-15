@@ -1,4 +1,7 @@
-const random = (max: number, min: number = 0) => Math.floor(Math.random() * max - min) + min;
+const random = (max: number, min: number = 0) => {
+    return Math.floor(Math.random() * max - min) + min;
+};
+
 const chance = (c: number): boolean => random(100) < c;
 
 const promise1 = () => new Promise((resolve, reject) => {
