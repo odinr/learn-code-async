@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{36:function(n,e,o){"use strict";o.r(e);const s=n=>(console.log("Fetched: "+n),n),t=(n,e)=>{n.ingredients.push(e),console.log("Applied: "+e)};e.default=()=>{const n={name:"🍔 Hamburger",ingredients:new Array};return t(n,s("🍞Bun")),t(n,s("🥩Patty")),t(n,s("🧀Chesse")),t(n,s("🥓Bacon")),t(n,s("🍞Bun")),n}}}]);
